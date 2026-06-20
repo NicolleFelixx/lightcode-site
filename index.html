@@ -5,6 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Light Code Systems — Soluções Tecnológicas Inteligentes</title>
 <meta name="description" content="Light Code Systems: desenvolvimento de sistemas, suporte técnico, automações, BI e consultoria para empresas que desejam crescer com tecnologia. Atendimento remoto em todo o Brasil e presencial no Rio de Janeiro." />
+<link rel="icon" href="data:image/svg+xml,<svg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'><rect%20width='64'%20height='64'%20rx='13'%20fill='%230A1626'/><path%20d='M32%2012c9%200%2015%206.6%2015%2014.8%200%205.5-3%208.7-5%2011.6-1.2%201.8-1.8%203.2-1.9%204.8H25.9c-.1-1.6-.7-3-1.9-4.8C22%2035.5%2019%2032.3%2019%2026.8%2019%2018.6%2023%2012%2032%2012Z'%20fill='none'%20stroke='%23F5A623'%20stroke-width='3'/><path%20d='M27%2049h10M28.5%2053h7'%20stroke='%23C9D4E2'%20stroke-width='2.4'%20stroke-linecap='round'/><path%20d='M30%2023%2026%2028.5%2030%2034'%20fill='none'%20stroke='%23F5A623'%20stroke-width='3'%20stroke-linecap='round'%20stroke-linejoin='round'/><path%20d='M34%2023%2038%2028.5%2034%2034'%20fill='none'%20stroke='%232E6FE5'%20stroke-width='3'%20stroke-linecap='round'%20stroke-linejoin='round'/></svg>" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Light Code Systems — Soluções Tecnológicas Inteligentes" />
+<meta property="og:description" content="Desenvolvimento de sistemas, sites, automações, BI e consultoria. Iluminando soluções através da tecnologia." />
+<meta property="og:url" content="https://nicollefelixx.github.io/lightcode-site/" />
+<meta property="og:image" content="https://nicollefelixx.github.io/lightcode-site/og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Light Code Systems" />
+<meta name="twitter:description" content="Soluções tecnológicas inteligentes para o seu negócio." />
+<meta name="twitter:image" content="https://nicollefelixx.github.io/lightcode-site/og.png" />
+<meta name="theme-color" content="#0A1626" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
@@ -274,6 +287,79 @@
   .ft-bottom .cr{font-size:.85rem;color:#7E8DA0}
   .ft-bottom .slogan{font-family:'JetBrains Mono';font-size:.82rem;color:var(--gold-400)}
 
+  /* ---------- ACCORDION (servicos + FAQ) ---------- */
+  .acc{max-width:880px;margin:48px auto 0;display:flex;flex-direction:column;gap:14px}
+  .acc-item{border:1px solid var(--line);border-radius:14px;background:var(--white);overflow:hidden;transition:border-color .3s,box-shadow .3s}
+  .acc-item.open{border-color:transparent;box-shadow:var(--shadow)}
+  .acc-head{width:100%;text-align:left;background:none;border:none;cursor:pointer;display:flex;align-items:center;gap:16px;padding:22px 24px;font-family:'Sora';font-weight:600;font-size:1.04rem;color:var(--navy-900);line-height:1.3}
+  .acc-head .ai{flex:none;width:42px;height:42px;border-radius:11px;display:grid;place-items:center;background:linear-gradient(150deg,var(--navy-800),var(--navy-900));color:var(--gold-400);transition:transform .3s var(--ease)}
+  .acc-head .ai svg{width:21px;height:21px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .acc-head .at{flex:1}
+  .acc-head .plus{flex:none;width:24px;height:24px;position:relative;transition:transform .35s var(--ease)}
+  .acc-head .plus::before,.acc-head .plus::after{content:"";position:absolute;background:var(--gold-500);border-radius:2px;left:50%;top:50%}
+  .acc-head .plus::before{width:13px;height:2px;transform:translate(-50%,-50%)}
+  .acc-head .plus::after{width:2px;height:13px;transform:translate(-50%,-50%);transition:transform .35s var(--ease)}
+  .acc-item.open .plus{transform:rotate(180deg)}
+  .acc-item.open .plus::after{transform:translate(-50%,-50%) scaleY(0)}
+  .acc-item.open .acc-head .ai{transform:scale(1.05) rotate(-3deg)}
+  .acc-body{max-height:0;overflow:hidden;transition:max-height .4s var(--ease)}
+  .acc-body .inner{padding:0 24px 24px 82px;color:var(--slate);font-size:.97rem;line-height:1.65}
+  @media(max-width:600px){.acc-body .inner{padding:0 20px 22px 20px}.acc-head{padding:18px 18px;font-size:.98rem}}
+
+  /* ---------- EXTRAS: progresso, topo, nav ativa, CTA cards ---------- */
+  #progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:200;background:linear-gradient(90deg,var(--gold-500),var(--gold-300))}
+  .nav-links a.active{color:var(--gold-500)}
+  .nav-links a.active::after{width:100%}
+  .totop{position:fixed;right:22px;bottom:90px;z-index:89;width:46px;height:46px;border-radius:50%;background:var(--navy-800);color:#fff;border:1px solid var(--line-dark);display:grid;place-items:center;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .3s var(--ease),transform .3s var(--ease),background .25s,color .25s}
+  .totop.show{opacity:1;visibility:visible;transform:none}
+  .totop:hover{background:var(--gold-500);color:var(--navy-900)}
+  .totop svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+  .card{display:flex;flex-direction:column}
+  .card ul{flex:1}
+  .card-cta{display:inline-flex;align-items:center;gap:.45rem;margin-top:18px;font-family:'Sora';font-weight:600;font-size:.85rem;color:var(--gold-500);transition:gap .2s var(--ease)}
+  .card-cta:hover{gap:.75rem}
+  .card-cta .wa-icon{width:15px;height:15px;fill:currentColor}
+
+  /* ---------- FORM extras ---------- */
+  .form-actions{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px}
+  .btn-mail{background:var(--navy-800);color:#fff;border:1px solid var(--line-dark)}
+  .btn-mail:hover{background:var(--navy-700);transform:translateY(-2px)}
+  .field .errmsg{display:none;color:#F09499;font-size:.72rem;margin-top:6px;font-family:'JetBrains Mono'}
+  .field.err input,.field.err textarea{border-color:#E5484D}
+  .field.err .errmsg{display:block}
+  @media(max-width:480px){.form-actions{grid-template-columns:1fr}}
+
+  /* ---------- CALCULADORA ---------- */
+  .calc{background:var(--cream)}
+  .calc-card{max-width:760px;margin:42px auto 0;background:var(--white);border:1px solid var(--line);border-radius:22px;padding:38px;box-shadow:var(--shadow)}
+  .calc-prog{display:flex;align-items:center;justify-content:center;gap:9px;margin-bottom:28px}
+  .calc-prog .dot{width:9px;height:9px;border-radius:50%;background:var(--line);transition:.3s var(--ease)}
+  .calc-prog .dot.active{background:var(--gold-500);transform:scale(1.3)}
+  .calc-prog .dot.done{background:var(--gold-300)}
+  .calc-step{display:none}
+  .calc-step.active{display:block;animation:calcfade .4s var(--ease)}
+  @keyframes calcfade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  .calc-q{font-family:'Sora';font-weight:700;font-size:1.3rem;text-align:center;margin-bottom:6px;color:var(--navy-900)}
+  .calc-sub{text-align:center;color:var(--slate);font-size:.92rem;margin-bottom:26px}
+  .calc-opts{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .calc-opt{display:flex;align-items:center;gap:13px;padding:16px 18px;border:1.5px solid var(--line);border-radius:13px;background:var(--cream);cursor:pointer;font-family:'Sora';font-weight:600;font-size:.94rem;color:var(--navy-900);text-align:left;transition:border-color .2s,transform .2s var(--ease),background .2s}
+  .calc-opt:hover{border-color:var(--gold-400);transform:translateY(-2px)}
+  .calc-opt.sel{border-color:var(--gold-500);background:rgba(245,166,35,.1)}
+  .calc-opt.simple{justify-content:center;text-align:center}
+  .calc-opt .oi{flex:none;width:36px;height:36px;border-radius:9px;display:grid;place-items:center;background:linear-gradient(150deg,var(--navy-800),var(--navy-900));color:var(--gold-400)}
+  .calc-opt .oi svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .calc-nav{display:flex;justify-content:flex-start;margin-top:22px}
+  .calc-back{background:none;border:none;color:var(--slate);font-family:'Sora';font-weight:600;cursor:pointer;font-size:.9rem;padding:.4rem 0;transition:color .2s}
+  .calc-back:hover{color:var(--navy-900)}
+  .calc-result{text-align:center}
+  .calc-result .ico-big{width:66px;height:66px;border-radius:18px;margin:0 auto 16px;display:grid;place-items:center;background:linear-gradient(150deg,var(--gold-400),var(--gold-500));color:var(--navy-900)}
+  .calc-result .ico-big svg{width:32px;height:32px;stroke:currentColor;fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+  .calc-result h3{font-size:1.45rem;margin:6px 0 8px;color:var(--navy-900)}
+  .calc-result .rec{color:var(--slate);max-width:30rem;margin:0 auto 4px}
+  .calc-summary{background:var(--cream);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin:20px auto 18px;text-align:left;font-size:.94rem;color:var(--slate);line-height:1.9;max-width:30rem}
+  .calc-summary b{color:var(--navy-900)}
+  @media(max-width:520px){.calc-opts{grid-template-columns:1fr}.calc-card{padding:26px 20px}}
+
   /* ---------- REVEAL ANIM ---------- */
   .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
   .reveal.in{opacity:1;transform:none}
@@ -321,6 +407,7 @@
 </style>
 </head>
 <body>
+<div id="progress"></div>
 
 <!-- =================== NAV =================== -->
 <header class="nav" id="nav">
@@ -334,9 +421,9 @@
         </defs>
         <path d="M32 9c10 0 17 7.4 17 16.6 0 6.2-3.3 9.8-5.6 13-1.4 2-2 3.6-2.1 5.4H24.7c-.1-1.8-.7-3.4-2.1-5.4C20.3 35.4 17 31.8 17 25.6 17 16.4 22 9 32 9Z" fill="none" stroke="url(#bulbg)" stroke-width="3.2" stroke-linecap="round"/>
         <path d="M26 49h12M27 53.5h10M29 58h6" stroke="#0A1626" stroke-width="2.6" stroke-linecap="round"/>
-        <path d="M32 22v22M26 30h12" stroke="#F5A623" stroke-width="3.4" stroke-linecap="round"/>
+        <path d="M30 20 25 27 30 34" fill="none" stroke="#F5A623" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M34 20 39 27 34 34" fill="none" stroke="#2E6FE5" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M22 27h-5M19 33h-6M21 39l-5 3" stroke="#0A1626" stroke-width="2.2" stroke-linecap="round"/>
-        <circle cx="14.5" cy="27" r="2.3" fill="#0A1626"/><circle cx="10.5" cy="33" r="2.3" fill="#0A1626"/><circle cx="13.5" cy="42.5" r="2.3" fill="#0A1626"/>
+        <circle cx="14.5" cy="27" r="2.1" fill="none" stroke="#0A1626" stroke-width="1.6"/><circle cx="10.5" cy="33" r="2.1" fill="none" stroke="#0A1626" stroke-width="1.6"/><circle cx="13.5" cy="42.5" r="2.1" fill="none" stroke="#0A1626" stroke-width="1.6"/>
       </svg>
       <span class="word"><i>light</i> <b>code</b><span class="sys">systems</span></span>
     </a>
@@ -344,9 +431,10 @@
       <a href="#home">Início</a>
       <a href="#sobre">Sobre</a>
       <a href="#servicos">Serviços</a>
-      <a href="#diferenciais">Diferenciais</a>
+      <a href="#calc">Orçamento</a>
+      <a href="#duvidas">Dúvidas</a>
       <a href="#contato">Contato</a>
-      <a href="#contato" class="btn btn-gold nav-cta">Solicitar Orçamento</a>
+      <a href="#calc" class="btn btn-gold nav-cta">Solicitar Orçamento</a>
     </nav>
     <button class="burger" id="burger" aria-label="Abrir menu"><span></span><span></span><span></span></button>
   </div>
@@ -361,14 +449,14 @@
       <h1 class="reveal d1">Soluções Tecnológicas <span class="glow">Inteligentes</span> para o Seu Negócio</h1>
       <p class="sub reveal d2">Desenvolvimento de sistemas, suporte técnico, automações e consultoria para empresas que desejam crescer com tecnologia.</p>
       <div class="hero-cta reveal d3">
-        <a href="#contato" class="btn btn-gold">Solicitar Orçamento</a>
-        <a href="https://wa.me/5521996591804" target="_blank" rel="noopener" class="btn btn-ghost">
+        <a href="#calc" class="btn btn-gold">Solicitar Orçamento</a>
+        <a href="https://wa.me/5521959527178" target="_blank" rel="noopener" class="btn btn-ghost">
           <svg class="wa-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.413c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.515zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
           Falar no WhatsApp
         </a>
       </div>
       <div class="hero-stats reveal d4">
-        <div class="stat"><div class="n">100%</div><div class="l">Soluções sob medida</div></div>
+        <div class="stat"><div class="n"><span class="count" data-count="100">0</span>%</div><div class="l">Soluções sob medida</div></div>
         <div class="stat"><div class="n">Brasil</div><div class="l">Atendimento remoto</div></div>
         <div class="stat"><div class="n">Rio</div><div class="l">Presencial · RJ</div></div>
       </div>
@@ -418,9 +506,10 @@
         <g stroke="#1C4068" stroke-width="6" stroke-linecap="round">
           <path d="M256 312h88"/><path d="M262 332h76"/><path d="M272 352h56"/>
         </g>
-        <!-- cross -->
-        <g class="crossg">
-          <path d="M300 120v150M262 168h76" stroke="url(#cross)" stroke-width="14" stroke-linecap="round" fill="none"/>
+        <!-- code brackets -->
+        <g stroke-width="16" stroke-linecap="round" stroke-linejoin="round" fill="none">
+          <polyline points="290,140 250,195 290,250" stroke="#F5A623"/>
+          <polyline points="310,140 350,195 310,250" stroke="#2E6FE5"/>
         </g>
       </svg>
     </div>
@@ -465,41 +554,41 @@
       <p>Tudo o que sua empresa precisa para operar, crescer e se destacar com tecnologia — em um só parceiro.</p>
     </div>
     <div class="cards">
-      <!-- 1 -->
       <article class="card reveal">
         <div class="ico"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
         <h3>Desenvolvimento de Software</h3>
         <ul><li>Sistemas personalizados</li><li>Sistemas web</li><li>APIs</li><li>Correções e melhorias</li></ul>
+        <a class="card-cta" href="https://wa.me/5521959527178?text=Ol%C3%A1%2C%20Light%20Code%20Systems%21%20Tenho%20interesse%20em%20Desenvolvimento%20de%20Software.%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener"><svg class="wa-icon" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.413c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.515zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>Tenho interesse</a>
       </article>
-      <!-- 2 -->
       <article class="card reveal d1">
         <div class="ico"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M2 9h20M6 22h12"/></svg></div>
         <h3>Criação de Sites e Landing Pages</h3>
         <ul><li>Sites institucionais</li><li>Landing pages para vendas</li><li>Portfólios profissionais</li></ul>
+        <a class="card-cta" href="https://wa.me/5521959527178?text=Ol%C3%A1%2C%20Light%20Code%20Systems%21%20Tenho%20interesse%20em%20Cria%C3%A7%C3%A3o%20de%20Sites%20e%20Landing%20Pages.%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener"><svg class="wa-icon" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.413c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.515zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>Tenho interesse</a>
       </article>
-      <!-- 3 -->
       <article class="card reveal d2">
         <div class="ico"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a5 5 0 00-6.4 6.4l-5.6 5.6a1.5 1.5 0 002.1 2.1l5.6-5.6a5 5 0 006.4-6.4l-2.7 2.7-2.1-2.1z"/></svg></div>
         <h3>Suporte Técnico</h3>
         <ul><li>Atendimento remoto</li><li>Atendimento presencial</li><li>Manutenção preventiva</li><li>Solução de problemas</li></ul>
+        <a class="card-cta" href="https://wa.me/5521959527178?text=Ol%C3%A1%2C%20Light%20Code%20Systems%21%20Tenho%20interesse%20em%20Suporte%20T%C3%A9cnico.%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener"><svg class="wa-icon" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.413c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.515zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>Tenho interesse</a>
       </article>
-      <!-- 4 -->
       <article class="card reveal">
         <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 2v3M12 19v3M5 5l2 2M17 17l2 2M2 12h3M19 12h3M5 19l2-2M17 7l2-2"/><circle cx="12" cy="12" r="3.5"/></svg></div>
         <h3>Automação de Processos</h3>
         <ul><li>Automação de tarefas</li><li>Integrações</li><li>Planilhas inteligentes</li><li>Ganho de produtividade</li></ul>
+        <a class="card-cta" href="https://wa.me/5521959527178?text=Ol%C3%A1%2C%20Light%20Code%20Systems%21%20Tenho%20interesse%20em%20Automa%C3%A7%C3%A3o%20de%20Processos.%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener"><svg class="wa-icon" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.413c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.515zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>Tenho interesse</a>
       </article>
-      <!-- 5 -->
       <article class="card reveal d1">
-        <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><rect x="7" y="11" width="3" height="6"/><rect x="13" y="7" width="3" height="10"/><rect x="19" y="13" width="0.1" height="4"/><path d="M7 8l4-3 3 2 4-4"/></svg></div>
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><rect x="7" y="11" width="3" height="6"/><rect x="13" y="7" width="3" height="10"/><path d="M7 8l4-3 3 2 4-4"/></svg></div>
         <h3>Business Intelligence</h3>
         <ul><li>Dashboards Power BI</li><li>Relatórios gerenciais</li><li>Indicadores de desempenho</li></ul>
+        <a class="card-cta" href="https://wa.me/5521959527178?text=Ol%C3%A1%2C%20Light%20Code%20Systems%21%20Tenho%20interesse%20em%20Business%20Intelligence.%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener"><svg class="wa-icon" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.413c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.515zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>Tenho interesse</a>
       </article>
-      <!-- 6 -->
       <article class="card reveal d2">
         <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V5l8-3z"/><path d="M9 12l2 2 4-4"/></svg></div>
         <h3>Segurança e Consultoria</h3>
         <ul><li>Boas práticas de segurança</li><li>Organização tecnológica</li><li>Consultoria em TI</li><li>Documentação de processos</li></ul>
+        <a class="card-cta" href="https://wa.me/5521959527178?text=Ol%C3%A1%2C%20Light%20Code%20Systems%21%20Tenho%20interesse%20em%20Seguran%C3%A7a%20e%20Consultoria.%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener"><svg class="wa-icon" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.413c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.515zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>Tenho interesse</a>
       </article>
     </div>
   </div>
@@ -542,20 +631,176 @@
   </div>
 </section>
 
-<!-- =================== DEPOIMENTOS =================== -->
-<section class="sec testi" id="depoimentos">
+<!-- =================== ENTENDA NOSSOS SERVIÇOS =================== -->
+<section class="sec" id="entenda" style="background:var(--cream)">
   <div class="wrap">
     <div class="sec-head center reveal">
-      <span class="eyebrow center">Confiança</span>
-      <h2>O que dizem nossos clientes</h2>
-      <p>Estamos construindo histórias de sucesso. Em breve, os depoimentos de quem cresceu com a Light Code Systems.</p>
+      <span class="eyebrow center">Sem complicação</span>
+      <h2>Entenda o que fazemos</h2>
+      <p>Toque em cada serviço para ver, em linguagem simples, como ele ajuda o seu negócio na prática.</p>
     </div>
-    <div class="testi-grid">
-      <div class="testi-card reveal"><div class="mark-q">"</div><p>Espaço reservado para o depoimento do seu projeto. Conte aqui o resultado que alcançamos juntos.</p><div class="who"><div class="av">★</div><div><div class="nm">Seu nome aqui</div><div class="rl">Empresa · Cargo</div></div></div></div>
-      <div class="testi-card reveal d1"><div class="mark-q">"</div><p>Espaço reservado para o depoimento do seu projeto. Conte aqui o resultado que alcançamos juntos.</p><div class="who"><div class="av">★</div><div><div class="nm">Seu nome aqui</div><div class="rl">Empresa · Cargo</div></div></div></div>
-      <div class="testi-card reveal d2"><div class="mark-q">"</div><p>Espaço reservado para o depoimento do seu projeto. Conte aqui o resultado que alcançamos juntos.</p><div class="who"><div class="av">★</div><div><div class="nm">Seu nome aqui</div><div class="rl">Empresa · Cargo</div></div></div></div>
+    <div class="acc">
+      <div class="acc-item reveal">
+        <button class="acc-head" type="button" aria-expanded="false">
+          <span class="ai"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
+          <span class="at">Desenvolvimento de Software</span><span class="plus"></span>
+        </button>
+        <div class="acc-body"><div class="inner">Criamos sistemas sob medida para o seu negócio — do zero ou evoluindo o que você já tem. Sistemas web, APIs que conectam suas ferramentas e melhorias que deixam tudo mais rápido e estável. Você ganha uma solução que funciona exatamente como sua operação precisa, sem pagar por funções que não usa.</div></div>
+      </div>
+      <div class="acc-item reveal d1">
+        <button class="acc-head" type="button" aria-expanded="false">
+          <span class="ai"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M2 9h20M6 22h12"/></svg></span>
+          <span class="at">Criação de Sites e Landing Pages</span><span class="plus"></span>
+        </button>
+        <div class="acc-body"><div class="inner">Sua presença digital profissional: sites institucionais que passam credibilidade, landing pages feitas para transformar visitantes em clientes e portfólios que valorizam o seu trabalho. Tudo responsivo (abre bonito no celular) e preparado para aparecer melhor no Google.</div></div>
+      </div>
+      <div class="acc-item reveal d2">
+        <button class="acc-head" type="button" aria-expanded="false">
+          <span class="ai"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a5 5 0 00-6.4 6.4l-5.6 5.6a1.5 1.5 0 002.1 2.1l5.6-5.6a5 5 0 006.4-6.4l-2.7 2.7-2.1-2.1z"/></svg></span>
+          <span class="at">Suporte Técnico</span><span class="plus"></span>
+        </button>
+        <div class="acc-body"><div class="inner">Resolvemos seus problemas de tecnologia com agilidade, de forma remota ou presencial no Rio de Janeiro. Fazemos manutenção preventiva para evitar dores de cabeça antes que aconteçam e ficamos disponíveis quando algo trava, para a sua equipe não perder tempo.</div></div>
+      </div>
+      <div class="acc-item reveal">
+        <button class="acc-head" type="button" aria-expanded="false">
+          <span class="ai"><svg viewBox="0 0 24 24"><path d="M12 2v3M12 19v3M5 5l2 2M17 17l2 2M2 12h3M19 12h3M5 19l2-2M17 7l2-2"/><circle cx="12" cy="12" r="3.5"/></svg></span>
+          <span class="at">Automação de Processos</span><span class="plus"></span>
+        </button>
+        <div class="acc-body"><div class="inner">Tarefas repetitivas consomem horas da sua equipe? A gente automatiza: integrações entre sistemas, planilhas inteligentes e rotinas que rodam sozinhas. O resultado é menos erro manual, mais produtividade e tempo livre para o que realmente importa.</div></div>
+      </div>
+      <div class="acc-item reveal d1">
+        <button class="acc-head" type="button" aria-expanded="false">
+          <span class="ai"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><rect x="7" y="11" width="3" height="6"/><rect x="13" y="7" width="3" height="10"/><path d="M7 8l4-3 3 2 4-4"/></svg></span>
+          <span class="at">Business Intelligence</span><span class="plus"></span>
+        </button>
+        <div class="acc-body"><div class="inner">Transformamos seus dados em decisões. Criamos dashboards no Power BI e relatórios gerenciais com os indicadores certos, para você enxergar a saúde do negócio de forma visual e em tempo real — e parar de decidir no “achismo”.</div></div>
+      </div>
+      <div class="acc-item reveal d2">
+        <button class="acc-head" type="button" aria-expanded="false">
+          <span class="ai"><svg viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V5l8-3z"/><path d="M9 12l2 2 4-4"/></svg></span>
+          <span class="at">Segurança e Consultoria</span><span class="plus"></span>
+        </button>
+        <div class="acc-body"><div class="inner">Ajudamos sua empresa a se organizar e se proteger: boas práticas de segurança, documentação de processos e consultoria em TI para você investir em tecnologia com clareza e tranquilidade, sem desperdício.</div></div>
+      </div>
     </div>
-    <p class="testi-note reveal">Quer ser nosso próximo case de sucesso? <a href="#contato" style="color:var(--gold-500);font-weight:700">Fale com a gente →</a></p>
+  </div>
+</section>
+
+<!-- =================== DÚVIDAS FREQUENTES =================== -->
+<section class="sec" id="duvidas" style="background:var(--white)">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow center">Perguntas comuns</span>
+      <h2>Dúvidas Frequentes</h2>
+      <p>Reunimos as perguntas que mais recebemos. Não achou a sua? É só falar com a gente.</p>
+    </div>
+    <div class="acc">
+      <div class="acc-item reveal">
+        <button class="acc-head" type="button" aria-expanded="false">
+          <span class="ai"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 2.5-3 4"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
+          <span class="at">Vocês atendem empresas fora do Rio de Janeiro?</span><span class="plus"></span>
+        </button>
+        <div class="acc-body"><div class="inner">Sim! Atendemos de forma remota empresas de todo o Brasil, com reuniões online e suporte à distância. No Rio de Janeiro, também oferecemos atendimento presencial quando necessário.</div></div>
+      </div>
+      <div class="acc-item reveal d1">
+        <button class="acc-head" type="button" aria-expanded="false">
+          <span class="ai"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 2.5-3 4"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
+          <span class="at">Quanto custa um projeto?</span><span class="plus"></span>
+        </button>
+        <div class="acc-body"><div class="inner">Cada projeto é único, então o valor depende do escopo e da complexidade. Por isso fazemos um orçamento personalizado e sem compromisso: você conta sua necessidade e nós apresentamos a melhor solução com o preço fechado antes de começar.</div></div>
+      </div>
+      <div class="acc-item reveal d2">
+        <button class="acc-head" type="button" aria-expanded="false">
+          <span class="ai"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 2.5-3 4"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
+          <span class="at">Quanto tempo leva para ficar pronto?</span><span class="plus"></span>
+        </button>
+        <div class="acc-body"><div class="inner">Depende do tamanho do projeto — um site institucional costuma ser mais rápido, um sistema sob medida leva mais tempo. Definimos o prazo logo no início, de forma transparente, e mantemos você informado em cada etapa.</div></div>
+      </div>
+      <div class="acc-item reveal">
+        <button class="acc-head" type="button" aria-expanded="false">
+          <span class="ai"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 2.5-3 4"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
+          <span class="at">Atendem pequenas empresas e quem está começando?</span><span class="plus"></span>
+        </button>
+        <div class="acc-body"><div class="inner">Com certeza. Um dos nossos focos é tornar a tecnologia acessível para pequenas empresas, com soluções que cabem no seu momento e crescem junto com o seu negócio.</div></div>
+      </div>
+      <div class="acc-item reveal d1">
+        <button class="acc-head" type="button" aria-expanded="false">
+          <span class="ai"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 2.5-3 4"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
+          <span class="at">E depois que o projeto é entregue?</span><span class="plus"></span>
+        </button>
+        <div class="acc-body"><div class="inner">Não desaparecemos. Oferecemos acompanhamento pós-entrega e suporte contínuo, ajustando e evoluindo a solução conforme a sua empresa precisar.</div></div>
+      </div>
+      <div class="acc-item reveal d2">
+        <button class="acc-head" type="button" aria-expanded="false">
+          <span class="ai"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 2.5-3 4"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
+          <span class="at">Como eu começo?</span><span class="plus"></span>
+        </button>
+        <div class="acc-body"><div class="inner">É simples: clique em “Solicitar Orçamento” ou fale com a gente no WhatsApp. Vamos entender a sua necessidade e apresentar a melhor solução para você.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== CALCULADORA DE ORÇAMENTO =================== -->
+<section class="sec calc" id="calc">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow center">Monte seu projeto</span>
+      <h2>Calculadora de Orçamento</h2>
+      <p>Responda 3 perguntas rápidas e receba uma recomendação — leva menos de 1 minuto e não tem compromisso.</p>
+    </div>
+    <div class="calc-card reveal">
+      <div class="calc-prog"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+
+      <div class="calc-step active">
+        <div class="calc-q">Que tipo de projeto você precisa?</div>
+        <div class="calc-sub">Escolha a opção que mais se aproxima.</div>
+        <div class="calc-opts">
+          <button class="calc-opt" type="button" data-step="0" data-key="code" data-label="Sistema ou Software"><span class="oi"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>Sistema ou Software</button>
+          <button class="calc-opt" type="button" data-step="0" data-key="site" data-label="Site ou Landing Page"><span class="oi"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M2 9h20M6 22h12"/></svg></span>Site ou Landing Page</button>
+          <button class="calc-opt" type="button" data-step="0" data-key="auto" data-label="Automação de processos"><span class="oi"><svg viewBox="0 0 24 24"><path d="M12 2v3M12 19v3M5 5l2 2M17 17l2 2M2 12h3M19 12h3M5 19l2-2M17 7l2-2"/><circle cx="12" cy="12" r="3.5"/></svg></span>Automação de processos</button>
+          <button class="calc-opt" type="button" data-step="0" data-key="sup" data-label="Suporte / TI"><span class="oi"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a5 5 0 00-6.4 6.4l-5.6 5.6a1.5 1.5 0 002.1 2.1l5.6-5.6a5 5 0 006.4-6.4l-2.7 2.7-2.1-2.1z"/></svg></span>Suporte / TI</button>
+          <button class="calc-opt" type="button" data-step="0" data-key="bi" data-label="BI / Dashboards"><span class="oi"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><rect x="7" y="11" width="3" height="6"/><rect x="13" y="7" width="3" height="10"/><path d="M7 8l4-3 3 2 4-4"/></svg></span>BI / Dashboards</button>
+          <button class="calc-opt" type="button" data-step="0" data-key="outro" data-label="Ainda não sei"><span class="oi"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 2.5-3 4"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>Ainda não sei</button>
+        </div>
+      </div>
+
+      <div class="calc-step">
+        <div class="calc-q">Qual o tamanho do projeto?</div>
+        <div class="calc-sub">Uma noção já ajuda bastante.</div>
+        <div class="calc-opts">
+          <button class="calc-opt simple" type="button" data-step="1" data-key="p" data-label="Simples / pontual">Simples / pontual</button>
+          <button class="calc-opt simple" type="button" data-step="1" data-key="m" data-label="Médio">Médio</button>
+          <button class="calc-opt simple" type="button" data-step="1" data-key="g" data-label="Robusto / completo">Robusto / completo</button>
+          <button class="calc-opt simple" type="button" data-step="1" data-key="x" data-label="Não sei estimar">Não sei estimar</button>
+        </div>
+        <div class="calc-nav"><button class="calc-back" type="button">← Voltar</button></div>
+      </div>
+
+      <div class="calc-step">
+        <div class="calc-q">Qual a urgência?</div>
+        <div class="calc-sub">Para alinharmos o prazo certo.</div>
+        <div class="calc-opts">
+          <button class="calc-opt simple" type="button" data-step="2" data-key="baixa" data-label="Sem pressa">Sem pressa</button>
+          <button class="calc-opt simple" type="button" data-step="2" data-key="media" data-label="Prazo normal">Prazo normal</button>
+          <button class="calc-opt simple" type="button" data-step="2" data-key="alta" data-label="É urgente">É urgente</button>
+        </div>
+        <div class="calc-nav"><button class="calc-back" type="button">← Voltar</button></div>
+      </div>
+
+      <div class="calc-step">
+        <div class="calc-result">
+          <div class="ico-big"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <span class="eyebrow center" style="justify-content:center">Recomendado para você</span>
+          <h3 id="calcTitle">—</h3>
+          <p class="rec" id="calcRec">—</p>
+          <div class="calc-summary" id="calcSum"></div>
+          <p class="rec" style="font-size:.88rem;margin-bottom:20px">Cada projeto é único — vamos preparar um orçamento sob medida, sem compromisso. 💡</p>
+          <a id="calcWa" class="btn btn-gold" href="#" target="_blank" rel="noopener" style="width:100%;margin-bottom:12px"><svg class="wa-icon" viewBox="0 0 24 24" style="width:18px;height:18px;fill:var(--navy-900)"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.413c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.515zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>Pedir orçamento no WhatsApp</a>
+          <button class="calc-restart" type="button" style="background:none;border:none;color:var(--slate);font-family:'Sora';font-weight:600;cursor:pointer;font-size:.9rem">↺ Refazer</button>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -571,17 +816,21 @@
       <div class="info-block reveal">
         <div class="info-item">
           <div class="ii"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
-          <div><div class="lbl">E-mail</div><a class="val" href="mailto:contato@lightcode.com.br">contato@lightcode.com.br</a></div>
+          <div><div class="lbl">E-mail</div><a class="val" href="mailto:lightcodesys@gmail.com">lightcodesys@gmail.com</a></div>
         </div>
         <div class="info-item">
           <div class="ii"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.5 2.1L8.1 9.6a16 16 0 006 6l1.1-1.1a2 2 0 012.1-.5c.9.3 1.8.5 2.7.6a2 2 0 011.7 2z"/></svg></div>
-          <div><div class="lbl">WhatsApp</div><a class="val" href="https://wa.me/5521996591804" target="_blank" rel="noopener">(21) 21996591804</a></div>
+          <div><div class="lbl">WhatsApp</div><a class="val" href="https://wa.me/5521959527178" target="_blank" rel="noopener">(21) 95952-7178</a></div>
+        </div>
+        <div class="info-item">
+          <div class="ii"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></div>
+          <div><div class="lbl">Instagram</div><a class="val" href="https://instagram.com/lightcode_systems" target="_blank" rel="noopener">@lightcode_systems</a></div>
         </div>
         <div class="info-item">
           <div class="ii"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
           <div><div class="lbl">Atendimento</div><div class="val">Remoto para todo o Brasil<br>Presencial no Rio de Janeiro</div></div>
         </div>
-        <a href="https://wa.me/5521996591804" target="_blank" rel="noopener" class="wa-card">
+        <a href="https://wa.me/5521959527178" target="_blank" rel="noopener" class="wa-card">
           <div class="t">Prefere conversar agora?<small>Resposta rápida pelo WhatsApp</small></div>
           <span class="btn btn-gold"><svg class="wa-icon" viewBox="0 0 24 24" style="fill:var(--navy-900)"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.413c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.515zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>Conversar</span>
         </a>
@@ -589,17 +838,20 @@
 
       <div class="form reveal d1">
         <div class="form-row">
-          <div class="field"><label for="nome">Nome</label><input id="nome" type="text" placeholder="Seu nome" /></div>
+          <div class="field"><label for="nome">Nome *</label><input id="nome" type="text" placeholder="Seu nome" /><span class="errmsg">Informe seu nome.</span></div>
           <div class="field"><label for="empresa">Empresa</label><input id="empresa" type="text" placeholder="Nome da empresa" /></div>
         </div>
         <div class="form-row">
-          <div class="field"><label for="email">E-mail</label><input id="email" type="email" placeholder="voce@empresa.com" /></div>
-          <div class="field"><label for="tel">Telefone</label><input id="tel" type="tel" placeholder="(00) 00000-0000" /></div>
+          <div class="field"><label for="email">E-mail</label><input id="email" type="email" placeholder="voce@empresa.com" /><span class="errmsg">Informe um e-mail válido.</span></div>
+          <div class="field"><label for="tel">Telefone / WhatsApp</label><input id="tel" type="tel" inputmode="numeric" placeholder="(21) 90000-0000" /><span class="errmsg">Informe e-mail ou telefone.</span></div>
         </div>
-        <div class="field"><label for="msg">Mensagem</label><textarea id="msg" placeholder="Conte um pouco sobre seu projeto ou desafio..."></textarea></div>
-        <button class="btn btn-gold" id="sendBtn" type="button">Enviar mensagem</button>
-        <div class="form-ok" id="formOk">Mensagem pronta! Vamos te direcionar ao WhatsApp para concluir o contato. ✦</div>
-        <p class="form-note">Ao enviar, abriremos o WhatsApp com sua mensagem já preenchida.</p>
+        <div class="field"><label for="msg">Mensagem *</label><textarea id="msg" placeholder="Conte um pouco sobre seu projeto ou desafio..."></textarea><span class="errmsg">Escreva sua mensagem.</span></div>
+        <div class="form-actions">
+          <button class="btn btn-gold" id="sendWa" type="button"><svg class="wa-icon" viewBox="0 0 24 24" style="width:17px;height:17px;fill:var(--navy-900)"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.413c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.515zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>WhatsApp</button>
+          <button class="btn btn-mail" id="sendMail" type="button"><svg viewBox="0 0 24 24" style="width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>E-mail</button>
+        </div>
+        <div class="form-ok" id="formOk">Tudo certo! Estamos abrindo o app para você concluir o envio. ✦</div>
+        <p class="form-note">Escolha por onde prefere falar — abrimos o app já com a mensagem preenchida. Nenhum dado é armazenado.</p>
       </div>
     </div>
   </div>
@@ -615,8 +867,8 @@
             <defs><linearGradient id="bulbg2" x1="20%" y1="90%" x2="85%" y2="10%"><stop offset="0" stop-color="#8FA6C2"/><stop offset="1" stop-color="#F5A623"/></linearGradient></defs>
             <path d="M32 9c10 0 17 7.4 17 16.6 0 6.2-3.3 9.8-5.6 13-1.4 2-2 3.6-2.1 5.4H24.7c-.1-1.8-.7-3.4-2.1-5.4C20.3 35.4 17 31.8 17 25.6 17 16.4 22 9 32 9Z" fill="none" stroke="url(#bulbg2)" stroke-width="3.2" stroke-linecap="round"/>
             <path d="M26 49h12M27 53.5h10M29 58h6" stroke="#8FA6C2" stroke-width="2.6" stroke-linecap="round"/>
-            <path d="M32 22v22M26 30h12" stroke="#F5A623" stroke-width="3.4" stroke-linecap="round"/>
-            <circle cx="14.5" cy="27" r="2.3" fill="#8FA6C2"/><circle cx="10.5" cy="33" r="2.3" fill="#8FA6C2"/><circle cx="13.5" cy="42.5" r="2.3" fill="#8FA6C2"/>
+            <path d="M30 20 25 27 30 34" fill="none" stroke="#F5A623" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M34 20 39 27 34 34" fill="none" stroke="#2E6FE5" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="14.5" cy="27" r="2.1" fill="none" stroke="#8FA6C2" stroke-width="1.6"/><circle cx="10.5" cy="33" r="2.1" fill="none" stroke="#8FA6C2" stroke-width="1.6"/><circle cx="13.5" cy="42.5" r="2.1" fill="none" stroke="#8FA6C2" stroke-width="1.6"/>
           </svg>
           <span class="word"><i style="color:#fff">light</i> <b>code</b><span class="sys">systems</span></span>
         </a>
@@ -629,8 +881,9 @@
         </div>
         <div class="ft-col">
           <h4>Contato</h4>
-          <a href="mailto:contato@lightcode.com.br">contato@lightcode.com.br</a>
-          <a href="https://wa.me/5521996591804" target="_blank" rel="noopener">(21) 21996591804</a>
+          <a href="mailto:lightcodesys@gmail.com">lightcodesys@gmail.com</a>
+          <a href="https://wa.me/5521959527178" target="_blank" rel="noopener">(21) 95952-7178</a>
+          <a href="https://instagram.com/lightcode_systems" target="_blank" rel="noopener">@lightcode_systems</a>
           <a href="#contato">Remoto · Brasil</a>
           <a href="#contato">Presencial · Rio de Janeiro</a>
         </div>
@@ -643,8 +896,11 @@
   </div>
 </footer>
 
+<!-- Voltar ao topo -->
+<button id="totop" class="totop" aria-label="Voltar ao topo"><svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg></button>
+
 <!-- Floating WhatsApp -->
-<a href="https://wa.me/5521996591804" target="_blank" rel="noopener" class="fab" aria-label="Falar no WhatsApp">
+<a href="https://wa.me/5521959527178" target="_blank" rel="noopener" class="fab" aria-label="Falar no WhatsApp">
   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.413c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.515zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
 </a>
 
@@ -666,15 +922,114 @@
   },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-  // Form -> WhatsApp
-  document.getElementById('sendBtn').addEventListener('click',()=>{
-    const v=id=>document.getElementById(id).value.trim();
-    const nome=v('nome'),empresa=v('empresa'),email=v('email'),tel=v('tel'),msg=v('msg');
-    const txt=`Olá, Light Code Systems! Gostaria de solicitar um orçamento.%0A%0A`+
-      `*Nome:* ${nome||'-'}%0A*Empresa:* ${empresa||'-'}%0A*E-mail:* ${email||'-'}%0A*Telefone:* ${tel||'-'}%0A*Mensagem:* ${msg||'-'}`;
-    document.getElementById('formOk').classList.add('show');
-    setTimeout(()=>{window.open(`https://wa.me/5521996591804?text=${txt}`,'_blank');},700);
+  // ---------- Formulário: máscara + validação + WhatsApp/E-mail ----------
+  const tel=document.getElementById('tel');
+  tel.addEventListener('input',()=>{
+    let d=tel.value.replace(/\D/g,'').slice(0,11),o=d;
+    if(d.length>=1)o='('+d.slice(0,2);
+    if(d.length>=3)o='('+d.slice(0,2)+') '+d.slice(2,7);
+    if(d.length>=8)o='('+d.slice(0,2)+') '+d.slice(2,7)+'-'+d.slice(7,11);
+    tel.value=o;
   });
+  const val=id=>document.getElementById(id).value.trim();
+  const fEl=id=>document.getElementById(id).closest('.field');
+  const setErr=(id,on)=>fEl(id).classList.toggle('err',on);
+  const emailRe=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  ['nome','empresa','email','tel','msg'].forEach(id=>document.getElementById(id).addEventListener('input',()=>fEl(id).classList.remove('err')));
+  function validate(needEmail){
+    let ok=true;
+    const bn=!val('nome'); setErr('nome',bn); if(bn)ok=false;
+    const bm=!val('msg'); setErr('msg',bm); if(bm)ok=false;
+    if(needEmail){ const be=!emailRe.test(val('email')); setErr('email',be); if(be)ok=false; }
+    else { const has=val('email')||val('tel'); setErr('email',!has); setErr('tel',!has); if(!has)ok=false; }
+    return ok;
+  }
+  document.getElementById('sendWa').addEventListener('click',()=>{
+    if(!validate(false))return;
+    const txt='Olá, Light Code Systems! Gostaria de solicitar um orçamento.\n\n'+
+      '*Nome:* '+val('nome')+'\n*Empresa:* '+(val('empresa')||'-')+'\n*E-mail:* '+(val('email')||'-')+
+      '\n*Telefone:* '+(val('tel')||'-')+'\n*Mensagem:* '+val('msg');
+    document.getElementById('formOk').classList.add('show');
+    setTimeout(()=>window.open('https://wa.me/5521959527178?text='+encodeURIComponent(txt),'_blank'),500);
+  });
+  document.getElementById('sendMail').addEventListener('click',()=>{
+    if(!validate(true))return;
+    const sub='Contato pelo site — '+(val('empresa')||val('nome'));
+    const body='Nome: '+val('nome')+'\nEmpresa: '+(val('empresa')||'-')+'\nE-mail: '+val('email')+
+      '\nTelefone: '+(val('tel')||'-')+'\n\nMensagem:\n'+val('msg');
+    document.getElementById('formOk').classList.add('show');
+    window.location.href='mailto:lightcodesys@gmail.com?subject='+encodeURIComponent(sub)+'&body='+encodeURIComponent(body);
+  });
+
+  // ---------- Barra de progresso ----------
+  const prog=document.getElementById('progress');
+  function updProg(){const h=document.documentElement,sc=h.scrollTop||document.body.scrollTop,mx=h.scrollHeight-h.clientHeight;prog.style.width=(mx>0?sc/mx*100:0)+'%';}
+  window.addEventListener('scroll',updProg,{passive:true});updProg();
+
+  // ---------- Voltar ao topo ----------
+  const totop=document.getElementById('totop');
+  window.addEventListener('scroll',()=>totop.classList.toggle('show',window.scrollY>500),{passive:true});
+  totop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+  // ---------- Menu: destaque da seção atual ----------
+  const spy=[...document.querySelectorAll('.nav-links a:not(.nav-cta)')]
+    .map(a=>({a,sec:document.querySelector(a.getAttribute('href'))})).filter(o=>o.sec);
+  function spyScroll(){const y=window.scrollY+130;let act=null;spy.forEach(o=>{if(o.sec.offsetTop<=y)act=o;});
+    spy.forEach(o=>o.a.classList.remove('active'));if(act)act.a.classList.add('active');}
+  window.addEventListener('scroll',spyScroll,{passive:true});spyScroll();
+
+  // ---------- Contador animado ----------
+  function count(el){const t=+el.dataset.count,t0=performance.now();
+    (function tick(n){const p=Math.min((n-t0)/1100,1);el.textContent=Math.round(t*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(tick);})(t0);}
+  const cio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){count(e.target);cio.unobserve(e.target);}}),{threshold:.6});
+  document.querySelectorAll('.count').forEach(el=>cio.observe(el));
+
+  // ---------- Calculadora de orçamento ----------
+  (function(){
+    const steps=[...document.querySelectorAll('.calc-step')];
+    const dots=[...document.querySelectorAll('.calc-prog .dot')];
+    const sel=[null,null,null]; let cur=0;
+    const rec={
+      code:{t:"Desenvolvimento de Software",r:"Vamos desenvolver um sistema sob medida para a sua operação."},
+      site:{t:"Criação de Site / Landing Page",r:"Vamos criar uma presença digital profissional e focada em converter clientes."},
+      auto:{t:"Automação de Processos",r:"Vamos automatizar suas tarefas repetitivas e ganhar produtividade."},
+      sup:{t:"Suporte Técnico",r:"Vamos cuidar da sua tecnologia com agilidade, remoto ou presencial."},
+      bi:{t:"Business Intelligence",r:"Vamos transformar seus dados em dashboards e decisões."},
+      outro:{t:"Consultoria Personalizada",r:"Vamos entender seu cenário e desenhar a melhor solução com você."}
+    };
+    function show(i){cur=i;steps.forEach((s,k)=>s.classList.toggle('active',k===i));
+      dots.forEach((d,k)=>{d.classList.toggle('active',k===i);d.classList.toggle('done',k<i);});}
+    document.querySelectorAll('.calc-opt').forEach(o=>o.addEventListener('click',()=>{
+      const st=+o.dataset.step; sel[st]={k:o.dataset.key,l:o.dataset.label};
+      o.closest('.calc-opts').querySelectorAll('.calc-opt').forEach(x=>x.classList.remove('sel'));
+      o.classList.add('sel');
+      setTimeout(()=>{ st<2?show(st+1):result(); },170);
+    }));
+    document.querySelectorAll('.calc-back').forEach(b=>b.addEventListener('click',()=>{if(cur>0)show(cur-1);}));
+    function result(){show(3);const r=rec[sel[0].k]||rec.outro;
+      document.getElementById('calcTitle').textContent=r.t;
+      document.getElementById('calcRec').textContent=r.r;
+      document.getElementById('calcSum').innerHTML='<b>Projeto:</b> '+sel[0].l+'<br><b>Tamanho:</b> '+sel[1].l+'<br><b>Urgência:</b> '+sel[2].l;
+      const msg='Olá, Light Code Systems! Usei a calculadora no site e gostaria de um orçamento.\n\n'+
+        '• Tipo de projeto: '+sel[0].l+'\n• Tamanho: '+sel[1].l+'\n• Urgência: '+sel[2].l+'\n\nPodem me ajudar?';
+      document.getElementById('calcWa').href='https://wa.me/5521959527178?text='+encodeURIComponent(msg);}
+    document.querySelector('.calc-restart').addEventListener('click',()=>{
+      sel[0]=sel[1]=sel[2]=null;
+      document.querySelectorAll('.calc-opt').forEach(o=>o.classList.remove('sel'));show(0);});
+    show(0);
+  })();
+
+  // Accordion (serviços + dúvidas)
+  function setH(item){const b=item.querySelector('.acc-body');b.style.maxHeight=item.classList.contains('open')?b.scrollHeight+'px':null;}
+  document.querySelectorAll('.acc-head').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const item=btn.closest('.acc-item');
+      const open=item.classList.toggle('open');
+      btn.setAttribute('aria-expanded',open);
+      setH(item);
+    });
+  });
+  window.addEventListener('resize',()=>document.querySelectorAll('.acc-item.open').forEach(setH));
 </script>
 </body>
 </html>
